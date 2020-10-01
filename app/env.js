@@ -16,8 +16,8 @@ const envs = {
     }
   },
   sandbox: {
-    email: 'financeiro@archshop.com.br',
-    token: '914C9DB3D10F4395B55EDDE7FECA3A79',
+    email: 'financeiro@.com.br',
+    token: '',
     notificationURL: 'url de notificação',
     providers: {
       inicia_sessao: 'https://ws.sandbox.pagseguro.uol.com.br/sessions',
