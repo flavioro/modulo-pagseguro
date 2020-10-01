@@ -1,1 +1,2 @@
-/checkout/transparente/node_modules
+node_modules
+yarn.lock
