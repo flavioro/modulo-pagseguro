@@ -18,13 +18,12 @@ const envs = {
   sandbox: {
     email: 'financeiro@archshop.com.br',
     token: '914C9DB3D10F4395B55EDDE7FECA3A79',
-    notificationURL: 'url de notificação',
+    notificationURL: 'https://www.archshop.com.br/compra/finalizado.html',
     providers: {
       inicia_sessao: 'https://ws.sandbox.pagseguro.uol.com.br/sessions',
       metodo_de_pagamento: 'https://ws.sandbox.pagseguro.uol.com.br/payment-methods',
       bandeira_do_cartao: 'https://df.uol.com.br/df-fe/mvc/creditcard/v1/getBin',
       token_do_cartao: 'https://df.uol.com.br/v2/cards',
-      // condicoes_de_pagamento: 'https://ws.sandbox.pagseguro.uol.com.br/checkout/v2/installments.json',
       condicoes_de_pagamento: 'https://ws.sandbox.pagseguro.uol.com.br/v2/installments.json',
       cria_checkout_transacao: 'https://ws.sandbox.pagseguro.uol.com.br/v2/transactions',
       cancela_transacao: 'https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/cancels',

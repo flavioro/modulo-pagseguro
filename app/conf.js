@@ -184,15 +184,18 @@ methods.credito = (option) => {
       senderCPF: option.sender.documents.type, //Tipo de documento do comprador. Especifica o tipo do documento é CPF ou CNPJ. Formato:CPF ou CNPJ
       senderCPF: option.sender.documents.value, //Número do CPF ou CNPJ do comprador Especifica o CPF/CNPJ do comprador que está realizando o pagamento. Formato: Um número de 11 dígitos para CPF ou 14 dígitos para CNPJ.
 
-      itemId1: option.items.item.id, // Identificam os itens sendo pagos
-      itemDescription1: option.items.item.description, // Descrevem os itens sendo pagos. Formato: Livre, com limite de 100 caracteres.
-      itemAmount1: option.items.item.amount, //Representam os preços unitários de cada item sendo pago. Decimal, com duas casas decimais separadas por ponto (p.e., 1234.56), maior que 0.00 e menor ou igual a 9999999.00.
-      itemQuantity1: option.items.item.quantity, // Representam as quantidades de cada item sendo pago
+      itemId1: option.items.id, // Identificam os itens sendo pagos
+      itemDescription1: option.items.description, // Descrevem os itens sendo pagos. Formato: Livre, com limite de 100 caracteres.
+      itemAmount1: option.items.amount, //Representam os preços unitários de cada item sendo pago. Decimal, com duas casas decimais separadas por ponto (p.e., 1234.56), maior que 0.00 e menor ou igual a 9999999.00.
+      itemQuantity1: option.items.quantity, // Representam as quantidades de cada item sendo pago
 
       creditCardToken: option.creditCard.token, //Token do Cartão de Crédito. Token retornado no serviço de obtenção de token do cartão de crédito. Formato: Não tem limite de caracteres.
       installmentQuantity: option.creditCard.installment.quantity, //Quantidade de parcelas escolhidas pelo cliente.Formato: Um inteiro entre 1 e 18.
-      installmentValue: option.creditCard.installment.value, //Valor das parcelas obtidas no serviço de opções de parcelamento. Formato: Numérico com 2 casas decimais e separado por ponto.
+      installmentAmount: option.creditCard.installment.installmentAmount, //Valor das parcelas obtidas no serviço de opções de parcelamento. Formato: Numérico com 2 casas decimais e separado por ponto.
       //noInterestInstallmentQuantity: option.creditCard.installment.noInterestInstallmentQuantity, // Quantidade de parcelas sem juros oferecidas ao cliente. O valor deve ser o mesmo indicado no método getInstallments, no parâmetro maxInstallmentNoInterest. Formato: Um inteiro. Obrigatório: Caso tenha sido informado o valor no parâmetro maxInstallmentNoInterest do método getInstallments.
+      // installmentValue: option.creditCard.installment.value,
+      installmentTotalAmount: option.creditCard.installment.totalAmount,
+      
       creditCardHolderName: option.creditCard.holder.name, //Nome impresso no cartão de crédito. Formato: min = 1, max = 50 caracteres.
       creditCardHolderCPF: option.creditCard.holder.documents.value, //Número do CPF ou CNPJ do comprador Especifica o CPF/CNPJ do comprador que está realizando o pagamento. Formato: Um número de 11 dígitos para CPF ou 14 dígitos para CNPJ. Obrigatório para cartão de crédito.
       creditCardHolderBirthDate: option.creditCard.holder.documents.birthDate, //Data de nascimento do dono do cartão de crédito. Formato: dd/MM/yyyy
@@ -215,6 +218,7 @@ methods.credito = (option) => {
       extraAmount: option.extraAmount ? option.extraAmount : '0.00', //Valor extra. Especifica um valor extra que deve ser adicionado ou subtraído ao valor total do pagamento. Esse valor pode representar uma taxa extra a ser cobrada no pagamento ou um desconto a ser concedido, caso o valor seja negativo. Formato: Decimal (positivo ou negativo), com duas casas decimais separadas por ponto (p.e., 1234.56 ou -1234.56), maior ou igual a -9999999.00 e menor ou igual a 9999999.00. Quando negativo, este valor não pode ser maior ou igual à soma dos valores dos produtos.
       notificationURL: env.notificationURL // URL para envio de notificações. Formato: Uma URL válida, com limite de 255 caracteres.
     }
+    console.log('dados');
     axios({
       method: "POST",
       url: env.providers.cria_checkout_transacao + '/',
