@@ -16,9 +16,15 @@ const envs = {
     }
   },
   sandbox: {
+<<<<<<< HEAD
     email: 'financeiro@archshop.com.br',
     token: '914C9DB3D10F4395B55EDDE7FECA3A79',
     notificationURL: 'https://www.archshop.com.br/compra/finalizado.html',
+=======
+    email: 'financeiro@.com.br',
+    token: '',
+    notificationURL: 'url de notificação',
+>>>>>>> 43bab60fd111164c053f50917c3f29c81843b6e7
     providers: {
       inicia_sessao: 'https://ws.sandbox.pagseguro.uol.com.br/sessions',
       metodo_de_pagamento: 'https://ws.sandbox.pagseguro.uol.com.br/payment-methods',
